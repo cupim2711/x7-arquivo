@@ -2,24 +2,36 @@
 <html lang="pt-br">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>// 2711 //</title>
 <style>
-body{background:#000;color:#fff;font-family:"Courier New",monospace;text-align:center;padding:12vh 8vw;line-height:2.2}
-.c{letter-spacing:.3em;font-size:1.3em;margin:3em 0}
-.h{color:#161616;font-size:.8em}
-.d{color:#fff;opacity:.35}
+body{background:#000;color:#fff;font-family:"Courier New",monospace;text-align:center;padding:12vh 6vw;line-height:2.2;-webkit-user-select:none;user-select:none}
+canvas{max-width:100%;height:auto;margin:3em 0}
+.h{color:#2a2a2a;font-size:.8em}
+.d{opacity:.35}
 </style>
 </head>
-<body>
+<body oncontextmenu="return false">
 <!-- a chave não está aqui. ela já foi mostrada a você. -->
-<!-- dez letras. uma palavra. -->
 <p>Você chegou até aqui.</p>
 <p>Poucos chegam.</p>
 <p class="d">Um cupim não derruba a casa de uma vez.</p>
 <p class="d">Ele começa pela superfície.</p>
-<p class="c">SJGSO NUCXS JNPIJ YIPWW GG</p>
+<canvas id="k" width="900" height="120"></canvas>
 <p class="h">Um diplomata francês do século XVI guarda esta porta.</p>
 <p class="h">Cada letra caminha um número diferente de casas.</p>
 <p>2711</p>
+<script>
+var t="SJGSO NUCXS JNPIJ YIPWW GG",c=document.getElementById("k"),x=c.getContext("2d");
+x.fillStyle="#000";x.fillRect(0,0,900,120);
+x.font="38px 'Courier New'";x.fillStyle="#fff";x.textBaseline="middle";
+var px=60;
+for(var i=0;i<t.length;i++){
+x.save();x.translate(px,60+(Math.random()*10-5));x.rotate((Math.random()-.5)*.25);
+x.fillText(t[i],0,0);x.restore();px+=32;
+}
+for(var j=0;j<260;j++){x.fillStyle="rgba(255,255,255,"+Math.random()*.25+")";x.fillRect(Math.random()*900,Math.random()*120,2,1)}
+for(var k=0;k<5;k++){x.strokeStyle="rgba(255,255,255,.18)";x.beginPath();x.moveTo(0,Math.random()*120);x.lineTo(900,Math.random()*120);x.stroke()}
+</script>
 </body>
 </html>
