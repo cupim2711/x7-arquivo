@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>// 2711 // II</title>
+<style>
+body{background:#000;color:#fff;font-family:"Courier New",monospace;text-align:center;padding:12vh 6vw;line-height:2.2;-webkit-user-select:none;user-select:none}
+canvas{max-width:100%;height:auto;margin:3em 0}
+.h{color:#333;font-size:.8em}
+.d{opacity:.35}
+</style>
+</head>
+<body oncontextmenu="return false">
+<p>A primeira porta se abriu.</p>
+<p class="d">A segunda não tem fechadura.</p>
+<p class="d">Só quem enxerga quadrados passa.</p>
+<canvas id="q" width="290" height="290"></canvas>
+<p class="h">O alfabeto se olha no espelho. A primeira letra é a última.</p>
+<p>2711</p>
+<script>
+var n=21,s="111111100110001111111100000100101001000001101110101001101011101101110101111001011101101110101110101011101100000101011001000001111111101010101111111000000001110000000000101111100111001111100001110000110111011000010010111010110000111101111001010111000100111100101000100111100000000001101011001111111111100100111110000100000101110010011010101110101000110111001101110101100110110100101110101001101110000100000100110010111101111111101101011011100",M=10,B=4,c=document.getElementById("q"),x=c.getContext("2d");
+x.fillStyle="#fff";x.fillRect(0,0,c.width,c.height);x.fillStyle="#000";
+for(var y=0;y<n;y++)for(var i=0;i<n;i++)if(s[y*n+i]=="1")x.fillRect((i+B)*M,(y+B)*M,M,M);
+</script>
+</body>
+</html>
