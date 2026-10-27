@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>// 2711 // III</title>
+<style>
+body{background:#000;color:#fff;font-family:"Courier New",monospace;text-align:center;padding:12vh 6vw;line-height:2.2;-webkit-user-select:none;user-select:none}
+canvas{max-width:100%;height:auto;margin:3em 0}
+.h{color:#333;font-size:.8em}
+.d{opacity:.35}
+</style>
+</head>
+<body oncontextmenu="return false">
+<p>Você desceu.</p>
+<p class="d">Aqui embaixo ninguém fala a nossa língua.</p>
+<canvas id="b" width="400" height="340"></canvas>
+<p class="h">Luz acesa. Luz apagada. Oito em oito.</p>
+<p class="h">Tabela de 1963.</p>
+<p>2711</p>
+<script>
+var w="SOM.WAV",c=document.getElementById("b"),x=c.getContext("2d");
+x.fillStyle="#000";x.fillRect(0,0,400,340);
+for(var r=0;r<w.length;r++){
+var bits=("00000000"+w.charCodeAt(r).toString(2)).slice(-8);
+for(var i=0;i<8;i++){
+var on=bits[i]=="1",px=40+i*40,py=30+r*40;
+x.fillStyle=on?"#fff":"#101010";x.fillRect(px,py,28,28);
+if(!on){x.strokeStyle="#222";x.strokeRect(px+.5,py+.5,27,27)}
+}}
+</script>
+</body>
+</html>
