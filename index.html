@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>// 2711 //</title>
 <style>
-body{background:#000;color:#fff;font-family:"Courier New",monospace;text-align:center;padding:10vh 5vw;line-height:2.2;-webkit-user-select:none;user-select:none}
+body{background:#000;color:#fff;font-family:"Courier New",monospace;text-align:center;padding:12vh 6vw;line-height:2.2;-webkit-user-select:none;user-select:none}
 canvas{max-width:100%;height:auto;margin:3em 0}
 .h{color:#333;font-size:.8em}
 .d{opacity:.35}
@@ -17,28 +17,21 @@ canvas{max-width:100%;height:auto;margin:3em 0}
 <p>Poucos chegam.</p>
 <p class="d">Um cupim não derruba a casa de uma vez.</p>
 <p class="d">Ele começa pela superfície.</p>
-<canvas id="k" width="1000" height="330"></canvas>
-<p class="h">Batidas na parede. Cinco por cinco.</p>
+<canvas id="k" width="900" height="120"></canvas>
 <p class="h">Um diplomata francês do século XVI guarda esta porta.</p>
-<p class="h">A palavra que abriu a primeira porta serve de novo, mas volta de costas.</p>
+<p class="h">A palavra que abriu a primeira porta serve de novo. Ida e volta.</p>
 <p>2711</p>
 <script>
-var t="MXGIZUUPJQDBPYUFICIUAU",g="ABCDEFGHIJLMNOPQRSTUVWXYZ",W=1000,H=330,lines=[],i,j;
-var c=document.getElementById("k"),x=c.getContext("2d");
-x.fillStyle="#000";x.fillRect(0,0,W,H);
-for(i=0;i<t.length;i+=6)lines.push(t.slice(i,i+6));
-lines.forEach(function(L,n){
-var q=[],w=0;
-for(i=0;i<L.length;i++){var p=g.indexOf(L[i]);q.push([Math.floor(p/5)+1,p%5+1]);w+=(q[i][0]-1)*14+(q[i][1]-1)*14+22+(i?34:0)}
-var px=(W-w)/2,y=40+n*78;
-q.forEach(function(r){
-for(j=0;j<r[0];j++){x.beginPath();x.arc(px+j*14,y,5,0,7);x.fillStyle="#fff";x.fill()}
-px+=(r[0]-1)*14+22;
-for(j=0;j<r[1];j++){x.beginPath();x.arc(px+j*14,y,5,0,7);x.fillStyle="#fff";x.fill()}
-px+=(r[1]-1)*14+34;
-});
-});
-for(i=0;i<120;i++){x.fillStyle="rgba(255,255,255,"+Math.random()*.1+")";x.fillRect(Math.random()*W,Math.random()*H,1,1)}
+var t="MJGUU QGEWZ FWLUX",c=document.getElementById("k"),x=c.getContext("2d");
+x.fillStyle="#000";x.fillRect(0,0,900,120);
+x.font="38px 'Courier New'";x.fillStyle="#fff";x.textBaseline="middle";
+var px=170;
+for(var i=0;i<t.length;i++){
+x.save();x.translate(px,60+(Math.random()*4-2));x.rotate((Math.random()-.5)*.08);
+x.fillText(t[i],0,0);x.restore();px+=32;
+}
+for(var j=0;j<70;j++){x.fillStyle="rgba(255,255,255,"+Math.random()*.12+")";x.fillRect(Math.random()*900,Math.random()*120,2,1)}
+for(var k=0;k<2;k++){x.strokeStyle="rgba(255,255,255,.07)";x.beginPath();x.moveTo(0,Math.random()*120);x.lineTo(900,Math.random()*120);x.stroke()}
 </script>
 </body>
 </html>
