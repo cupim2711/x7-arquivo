@@ -14,13 +14,13 @@ canvas{max-width:100%;height:auto;margin:3em 0}
 <body oncontextmenu="return false">
 <p>Você desceu.</p>
 <p class="d">Aqui embaixo ninguém fala a nossa língua.</p>
-<canvas id="b" width="400" height="340"></canvas>
+<canvas id="b" width="400" height="480"></canvas>
 <p class="h">Luz acesa. Luz apagada. Oito em oito.</p>
 <p class="h">Tabela de 1963.</p>
 <p>2711</p>
 <script>
-var w="SOM.WAV",c=document.getElementById("b"),x=c.getContext("2d");
-x.fillStyle="#000";x.fillRect(0,0,400,340);
+var w="CAMARA.HTML",c=document.getElementById("b"),x=c.getContext("2d");
+x.fillStyle="#000";x.fillRect(0,0,400,480);
 for(var r=0;r<w.length;r++){
 var bits=("00000000"+w.charCodeAt(r).toString(2)).slice(-8);
 for(var i=0;i<8;i++){
