@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>// 2711 // VIII</title>
+<style>
+body{background:#000;color:#fff;font-family:"Courier New",monospace;text-align:center;padding:12vh 6vw;line-height:2.2;-webkit-user-select:none;user-select:none}
+canvas{max-width:100%;height:auto;margin:3em 0}
+.h{color:#333;font-size:.8em}
+.d{opacity:.35}
+</style>
+</head>
+<body oncontextmenu="return false">
+<p>Você se perdeu.</p>
+<p class="d">Todo caminho parece o certo.</p>
+<canvas id="m" width="580" height="580"></canvas>
+<p class="h">Entre pela esquerda, saia pela direita. Só o caminho certo fala.</p>
+<p class="h">O monstro do centro dá nome ao quadrado de vinte e cinco. Coordenadas partidas ao meio e coladas de novo.</p>
+<p class="h">A assinatura sem o dois: uma inclinação e um deslocamento. Multiplique, depois some.</p>
+<p class="h">Desfaça de fora pra dentro. O endereço é todo em minúsculas.</p>
+<p>2711</p>
+<script>
+var N=14,Z=38,O=24,W="1103102230223120111020302231210200102021110110131011130311110333322003131102202033031031322121202133000302330213203132001203210211223321320323110102022321113033032020310022030301132133222332322232",L="ZO....M........YF..NX.B........ZK..RR...O.........BG.....K....F.SF.PR....Y..B........H.ST...Y.RPU.V..C.....D..LQ.J....U.DU.SB........Y.A..MY...C.C.......X...Y..YET....ES.TLW...H.D.Z...........U..P",c=document.getElementById("m"),x=c.getContext("2d");
+x.fillStyle="#000";x.fillRect(0,0,c.width,c.height);
+x.strokeStyle="#fff";x.lineWidth=3;x.lineCap="square";
+x.beginPath();
+x.moveTo(O,O);x.lineTo(O+N*Z,O);
+x.moveTo(O,O+Z);x.lineTo(O,O+N*Z);
+for(var r=0;r<N;r++)for(var q=0;q<N;q++){
+var v=+W[r*N+q],X=O+q*Z,Y=O+r*Z;
+if(v&1){x.moveTo(X+Z,Y);x.lineTo(X+Z,Y+Z)}
+if(v&2){x.moveTo(X,Y+Z);x.lineTo(X+Z,Y+Z)}
+}
+x.stroke();
+x.font="20px 'Courier New'";x.fillStyle="#fff";x.textAlign="center";x.textBaseline="middle";
+for(var i=0;i<L.length;i++){if(L[i]!=".")x.fillText(L[i],O+(i%N)*Z+Z/2,O+Math.floor(i/N)*Z+Z/2+1)}
+</script>
+</body>
+</html>
