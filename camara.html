@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>// 2711 // III</title>
+<title>// 2711 // IV</title>
 <style>
 body{background:#000;color:#fff;font-family:"Courier New",monospace;text-align:center;padding:12vh 6vw;line-height:2.2;-webkit-user-select:none;user-select:none}
 canvas{max-width:100%;height:auto;margin:3em 0}
@@ -12,22 +12,28 @@ canvas{max-width:100%;height:auto;margin:3em 0}
 </style>
 </head>
 <body oncontextmenu="return false">
-<p>Você desceu.</p>
-<p class="d">Aqui embaixo ninguém fala a nossa língua.</p>
-<canvas id="b" width="400" height="480"></canvas>
-<p class="h">Luz acesa. Luz apagada. Oito em oito.</p>
-<p class="h">Tabela de 1963.</p>
+<!-- quatro cifras. uma porta. -->
+<p>Você chegou à câmara.</p>
+<p class="d">Daqui em diante, nada é gentil.</p>
+<canvas id="k" width="900" height="170"></canvas>
+<p class="h">A metade final da assinatura diz quantas casas.</p>
+<p class="h">Seis letras fizeram uma guerra. Desfaça o passo antes.</p>
+<p class="h">O quadrado tem trinta e seis casas. O nome do grupo abre o quadrado.</p>
+<p class="h">As colunas obedecem à palavra que abriu a segunda porta.</p>
+<p class="h">Por baixo de tudo, o diplomata de novo. Sua chave é o lugar onde você desceu.</p>
 <p>2711</p>
 <script>
-var w="CAMARA.HTML",c=document.getElementById("b"),x=c.getContext("2d");
-x.fillStyle="#000";x.fillRect(0,0,400,480);
-for(var r=0;r<w.length;r++){
-var bits=("00000000"+w.charCodeAt(r).toString(2)).slice(-8);
-for(var i=0;i<8;i++){
-var on=bits[i]=="1",px=40+i*40,py=30+r*40;
-x.fillStyle=on?"#fff":"#101010";x.fillRect(px,py,28,28);
-if(!on){x.strokeStyle="#222";x.strokeRect(px+.5,py+.5,27,27)}
+var T=["OGQI ORRR GLOQ QLOL","LQIG QLIO GRRL RROQ"],c=document.getElementById("k"),x=c.getContext("2d");
+x.fillStyle="#000";x.fillRect(0,0,900,170);
+x.font="34px 'Courier New'";x.fillStyle="#fff";x.textBaseline="middle";
+for(var n=0;n<2;n++){
+var t=T[n],px=(900-t.length*30)/2;
+for(var i=0;i<t.length;i++){
+x.save();x.translate(px,45+n*80+(Math.random()*4-2));x.rotate((Math.random()-.5)*.08);
+x.fillText(t[i],0,0);x.restore();px+=30;
 }}
+for(var j=0;j<90;j++){x.fillStyle="rgba(255,255,255,"+Math.random()*.12+")";x.fillRect(Math.random()*900,Math.random()*170,2,1)}
+for(var k=0;k<2;k++){x.strokeStyle="rgba(255,255,255,.07)";x.beginPath();x.moveTo(0,Math.random()*170);x.lineTo(900,Math.random()*170);x.stroke()}
 </script>
 </body>
 </html>
