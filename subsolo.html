@@ -19,12 +19,11 @@ canvas{max-width:100%;height:auto;margin:3em 0}
 <p class="h">Tabela de 1963.</p>
 <p>2711</p>
 <script>
-var w="CAMARA.HTML",c=document.getElementById("b"),x=c.getContext("2d");
+var w=["01000011", "01000001", "01001101", "01000001", "01010010", "01000001", "00101110", "01001000", "01010100", "01001101", "01001100"],c=document.getElementById("b"),x=c.getContext("2d");
 x.fillStyle="#000";x.fillRect(0,0,400,480);
 for(var r=0;r<w.length;r++){
-var bits=("00000000"+w.charCodeAt(r).toString(2)).slice(-8);
 for(var i=0;i<8;i++){
-var on=bits[i]=="1",px=40+i*40,py=30+r*40;
+var on=w[r][i]=="1",px=40+i*40,py=30+r*40;
 x.fillStyle=on?"#fff":"#101010";x.fillRect(px,py,28,28);
 if(!on){x.strokeStyle="#222";x.strokeRect(px+.5,py+.5,27,27)}
 }}
