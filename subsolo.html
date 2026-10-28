@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>// 2711 // III</title>
 <style>
-body{background:#000;color:#fff;font-family:"Courier New",monospace;text-align:center;padding:5vh 6vw;line-height:2.2;-webkit-user-select:none;user-select:none}
-canvas{max-width:100%;height:auto;margin:1.5em 0}
+body{background:#000;color:#fff;font-family:"Courier New",monospace;text-align:center;padding:4vh 6vw;line-height:2;-webkit-user-select:none;user-select:none}
+canvas{max-width:100%;height:auto;margin:1em 0}
 .h{color:#333;font-size:.8em}
 .d{opacity:.35}
 </style>
@@ -14,7 +14,7 @@ canvas{max-width:100%;height:auto;margin:1.5em 0}
 <body oncontextmenu="return false">
 <p>Você desceu.</p>
 <p class="d">Aqui embaixo ninguém fala a nossa língua.</p>
-<canvas id="b" width="360" height="460"></canvas>
+<canvas id="b" width="360" height="500"></canvas>
 <p class="h">Luz acesa. Luz apagada. Oito em oito.</p>
 <p class="h">Tabela de 1963.</p>
 <p>2711</p>
@@ -23,27 +23,25 @@ var w = "CAMARA.HTML";
 var c = document.getElementById("b");
 var x = c.getContext("2d");
 
-// Limpa fundo do canvas
+// Limpa o canvas com fundo preto
 x.fillStyle = "#000";
 x.fillRect(0, 0, c.width, c.height);
 
-// Desenha a palavra caractere por caractere em 8 bits
+// Desenha cada caractere em 8 bits (linhas)
 for (var r = 0; r < w.length; r++) {
-    // Pega o código da letra e converte em binário de 8 bits
     var bits = ("00000000" + w.charCodeAt(r).toString(2)).slice(-8);
     
     for (var i = 0; i < 8; i++) {
         var on = bits[i] === "1";
-        var px = 20 + i * 40;  // Eixo X
-        var py = 10 + r * 40;  // Eixo Y
+        var px = 20 + i * 40;  // Coluna (bit)
+        var py = 15 + r * 42;  // Linha (caractere) com espaçamento ideal
         
-        // Quadros acesos (#fff) ou apagados (#101010)
         x.fillStyle = on ? "#fff" : "#101010";
-        x.fillRect(px, py, 28, 28);
+        x.fillRect(px, py, 32, 32);
         
         if (!on) {
             x.strokeStyle = "#222";
-            x.strokeRect(px + 0.5, py + 0.5, 27, 27);
+            x.strokeRect(px + 0.5, py + 0.5, 31, 31);
         }
     }
 }
