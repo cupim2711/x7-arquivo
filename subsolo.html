@@ -14,7 +14,8 @@ canvas{max-width:100%;height:auto;margin:1.5em 0}
 <body oncontextmenu="return false">
 <p>Você desceu.</p>
 <p class="d">Aqui embaixo ninguém fala a nossa língua.</p>
-<canvas id="b" width="400" height="520"></canvas>
+<!-- Aumentado a altura do canvas para acomodar perfeitamente os 11 caracteres de CAMARA.HTML -->
+<canvas id="b" width="400" height="500"></canvas>
 <p class="h">Luz acesa. Luz apagada. Oito em oito.</p>
 <p class="h">Tabela de 1963.</p>
 <p>2711</p>
@@ -34,7 +35,7 @@ for (var r = 0; r < w.length; r++) {
     for (var i = 0; i < 8; i++) {
         var on = bits[i] === "1";
         var px = 30 + i * 42;  // Posição X (coluna do bit de 0 a 7)
-        var py = 20 + r * 42;  // Posição Y (linha do caractere de 0 a 10)
+        var py = 15 + r * 42;  // Posição Y ajustada para 11 linhas
         
         x.fillStyle = on ? "#fff" : "#101010";
         x.fillRect(px, py, 32, 32);
