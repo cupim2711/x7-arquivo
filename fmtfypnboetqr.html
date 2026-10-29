@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>// 2711 // X</title>
+<style>
+body{background:#000;color:#fff;font-family:"Courier New",monospace;text-align:center;padding:12vh 6vw;line-height:2.2;-webkit-user-select:none;user-select:none}
+canvas{max-width:100%;height:auto;margin:3em 0}
+.h{color:#333;font-size:.8em}
+.d{opacity:.35}
+</style>
+</head>
+<body oncontextmenu="return false">
+<p>Você abriu o nono cofre.</p>
+<p class="d">Ele só guarda números.</p>
+<canvas id="h" width="560" height="210"></canvas>
+<p class="h">Um despejo de memória. Os números são bytes, escritos em base dezesseis.</p>
+<p class="h">Cada byte foi misturado com outro, em ciclo: um ou outro, nunca os dois.</p>
+<p class="h">A chave é o nome do grupo, tudo junto, em minúsculas.</p>
+<p class="h">O resultado é o endereço seguido de dez letras, tudo em minúsculas.</p>
+<p class="h">Depois do endereço, o texto entrega a senha de dez letras da próxima porta.</p>
+<p>2711</p>
+<script>
+var D=["offset    00 01 02 03 04 05 06 07   ascii", "00000000  02 1c 14 18 1f 42 41 55  |.....BAU|", "00000008  48 11 13 09 08 43 5a 43  |H....CZC|", "00000010  5c 5d 13 14 02 11 0b 5b  |\\].....[|", "00000018  5f 44 45 15              |_DE.|"],c=document.getElementById("h"),x=c.getContext("2d");
+x.fillStyle="#000";x.fillRect(0,0,c.width,c.height);x.fillStyle="#fff";x.font="19px 'Courier New'";x.textBaseline="middle";x.textAlign="left";
+for(var i=0;i<D.length;i++)x.fillText(D[i],20,30+i*32);
+</script>
+</body>
+</html>
