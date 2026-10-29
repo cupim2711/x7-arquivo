@@ -22,12 +22,13 @@ canvas{max-width:100%;height:auto;margin:3em 0}
 <p class="lang">português</p>
 <p class="h">Um hidrógrafo britânico do século XIX mede a força dos ventos nesta porta.</p>
 <p class="h">A palavra que abriu a primeira porta serve de novo: primeiro de trás pra frente, depois como ela é.</p>
+<p class="h">Depois do endereço, o texto entrega a senha de dez letras da próxima porta.</p>
 <p>2711</p>
 <script>
-var t="MRZAUHG.IPAB",c=document.getElementById("k"),x=c.getContext("2d");
+var t="MRZAUHG.IPABEISGWKEFZW",c=document.getElementById("k"),x=c.getContext("2d");
 x.fillStyle="#000";x.fillRect(0,0,900,120);
 x.font="38px 'Courier New'";x.fillStyle="#fff";x.textBaseline="middle";
-var px=240;
+var px=(900-t.length*32)/2;
 for(var i=0;i<t.length;i++){
 x.save();x.translate(px,60+(Math.random()*4-2));x.rotate((Math.random()-.5)*.08);
 x.fillText(t[i],0,0);x.restore();px+=32;
