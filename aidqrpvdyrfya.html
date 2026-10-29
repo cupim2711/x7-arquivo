@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>// 2711 // XI</title>
+<style>
+body{background:#000;color:#fff;font-family:"Courier New",monospace;text-align:center;padding:12vh 6vw;line-height:2.2;-webkit-user-select:none;user-select:none}
+canvas{max-width:100%;height:auto;margin:3em 0}
+.h{color:#333;font-size:.8em}
+.d{opacity:.35}
+</style>
+</head>
+<body oncontextmenu="return false">
+<p>Você chegou ao décimo primeiro andar.</p>
+<p class="d">Aqui a porta é feita de matemática.</p>
+<canvas id="r" width="440" height="620"></canvas>
+<p class="h">Dois primos de nove dígitos moram dentro de n. Quem os separa abre a porta.</p>
+<p class="h">Cada número c guarda duas letras juntas: A é 01, B é 02, até Z que é 26. Um bloco = quatro dígitos.</p>
+<p class="h">O endereço é todo em minúsculas.</p>
+<p class="h">Depois do endereço, o texto entrega a senha de dez letras da próxima porta.</p>
+<p>2711</p>
+<script>
+var D=["n  = 583141346308532449", "e  = 65537", "", "c01 = 246861928036635248", "c02 = 122969944244981149", "c03 = 271997584919724776", "c04 = 154034219840731255", "c05 = 167894608362333329", "c06 = 221455273096414793", "c07 = 337853649525163308", "c08 = 145054921653762813", "c09 = 353694084520923025", "c10 = 146496974469694970", "c11 = 89071436088525002", "c12 = 194707133124058271", "c13 = 553818681179833846", "c14 = 426187196742344132", "c15 = 206615223484524470", "c16 = 4731472949610555"],c=document.getElementById("r"),x=c.getContext("2d");
+x.fillStyle="#000";x.fillRect(0,0,c.width,c.height);x.fillStyle="#fff";x.font="18px 'Courier New'";x.textBaseline="middle";x.textAlign="left";
+for(var i=0;i<D.length;i++)x.fillText(D[i],20,28+i*30);
+</script>
+</body>
+</html>
