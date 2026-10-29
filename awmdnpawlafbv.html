@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>// 2711 // IX</title>
+<style>
+body{background:#000;color:#fff;font-family:"Courier New",monospace;text-align:center;padding:12vh 6vw;line-height:2.2;-webkit-user-select:none;user-select:none}
+canvas{max-width:100%;height:auto;margin:3em 0}
+.h{color:#333;font-size:.8em}
+.d{opacity:.35}
+</style>
+</head>
+<body oncontextmenu="return false">
+<p>Você saiu do labirinto.</p>
+<p class="d">Mas o que está escrito não é só o que se lê.</p>
+<canvas id="t" width="640" height="368"></canvas>
+<p class="h">Um filósofo inglês, entre os séculos XVI e XVII, escondia mensagens em dois tipos de letra, cinco a cinco.</p>
+<p class="h">A letra comum é A. A letra firme é B. Vinte e seis letras, cada uma com seu próprio código.</p>
+<p class="h">Por baixo, o diplomata francês de novo. Sua chave é o lugar de onde você veio.</p>
+<p class="h">O endereço é todo em minúsculas.</p>
+<p class="h">Depois do endereço, o texto entrega a senha de dez letras da próxima porta.</p>
+<p>2711</p>
+<script>
+var T=["E a torre sobe pelo escuro, quem", "repara no trabalho pequeno, o", "escuro tambem tem corredores,", "tudo o que importa mora na", "forma, a madeira cede sem fazer", "barulho, cada porta fechada", "esconde outra porta."],B="1000001100101000110101111101110000010100000100111110011100011100100110101100000001100000101001010011011011001101110001111010000011100000110110100010111011110010",c=document.getElementById("t"),x=c.getContext("2d");
+x.fillStyle="#000";x.fillRect(0,0,c.width,c.height);x.textBaseline="middle";x.fillStyle="#fff";
+x.font="26px 'Courier New'";var a=x.measureText("M").width,k=0;
+for(var i=0;i<T.length;i++){var s=T[i],px=(c.width-s.length*a)/2;
+for(var j=0;j<s.length;j++){var ch=s[j];
+if(/[A-Za-z]/.test(ch)){x.font=(B[k++]=="1"?"bold ":"")+"26px 'Courier New'"}else{x.font="26px 'Courier New'"}
+x.fillText(ch,px+j*a,40+i*44)}}
+</script>
+</body>
+</html>
