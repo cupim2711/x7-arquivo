@@ -19,15 +19,17 @@ canvas{max-width:100%;height:auto;margin:3em 0}
 <canvas id="e" width="900" height="100"></canvas>
 <canvas id="r" width="660" height="220"></canvas>
 <p><span class="b" onclick="ouvir()">&#9654; ouvir</span></p>
-<p class="h">Uma máquina de rotores, de 1918. Hoje ela cabe no navegador.</p>
-<p class="h">Os rotores são os três primeiros números primos, em romano, do menor ao maior.</p>
+<p class="h">293,66 · 349,23 · 440,00 Hz</p>
+<p class="h">Uma máquina de rotores, de 1918. Hoje ela cabe no navegador: a Enigma do exército, com três rotores.</p>
+<p class="h">Os rotores são os três primeiros números primos, em romano, do menor ao maior, da esquerda para a direita.</p>
 <p class="h">O espelho é o segundo. Nenhum cabo foi ligado.</p>
-<p class="h">As rosas dizem onde cada rotor começa. Cada pétala é uma letra, contando a partir de A.</p>
-<p class="h">Três notas dizem como cada anel foi girado. Ouça, e dê nome a cada uma.</p>
+<p class="h">As rosas dizem a posição inicial de cada rotor, da esquerda para a direita. Cada pétala é uma letra, contando a partir de A.</p>
+<p class="h">As três notas (ouça, ou use as frequências acima) dizem a posição de cada anel, da esquerda para a direita. Dê nome a cada nota usando letras, de A a G.</p>
 <p class="h">Quando as engrenagens girarem certo, a primeira palavra será um lugar fechado onde os segredos dormem.</p>
+<p class="h">Depois do endereço, o texto entrega a senha de dez letras da próxima porta.</p>
 <p>2711</p>
 <script>
-var t="ATNV LSUJ IODT WBM",c=document.getElementById("e"),x=c.getContext("2d");
+var t="ATNVL SUJIO DTWBM DVWJO QEXCN",c=document.getElementById("e"),x=c.getContext("2d");
 x.fillStyle="#000";x.fillRect(0,0,900,100);
 x.font="34px 'Courier New'";x.fillStyle="#fff";x.textBaseline="middle";
 var px=(900-t.length*30)/2;
