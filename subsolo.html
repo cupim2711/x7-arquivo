@@ -14,18 +14,19 @@ canvas{max-width:100%;height:auto;margin:3em 0}
 <body oncontextmenu="return false">
 <p>Você desceu.</p>
 <p class="d">Aqui embaixo ninguém fala a nossa língua.</p>
-<canvas id="b" width="400" height="480"></canvas>
+<canvas id="b" width="268" height="586"></canvas>
 <p class="h">Luz acesa. Luz apagada. Oito em oito.</p>
 <p class="h">Tabela de 1963.</p>
+<p class="h">Depois do endereço, o texto entrega a senha de dez letras da próxima porta.</p>
 <p>2711</p>
 <script>
-var w=["01000011", "01000001", "01001101", "01000001", "01010010", "01000001", "00101110", "01001000", "01010100", "01001101", "01001100"],c=document.getElementById("b"),x=c.getContext("2d");
-x.fillStyle="#000";x.fillRect(0,0,400,480);
+var w=["01000011", "01000001", "01001101", "01000001", "01010010", "01000001", "00101110", "01001000", "01010100", "01001101", "01001100", "01010110", "01000001", "01001111", "01010111", "01011001", "01011010", "01010110", "01000111", "01001100", "01000111"],c=document.getElementById("b"),x=c.getContext("2d");
+x.fillStyle="#000";x.fillRect(0,0,c.width,c.height);
 for(var r=0;r<w.length;r++){
 for(var i=0;i<8;i++){
-var on=w[r][i]=="1",px=40+i*40,py=30+r*40;
-x.fillStyle=on?"#fff":"#101010";x.fillRect(px,py,28,28);
-if(!on){x.strokeStyle="#222";x.strokeRect(px+.5,py+.5,27,27)}
+var on=w[r][i]=="1",px=30+i*26,py=20+r*26;
+x.fillStyle=on?"#fff":"#101010";x.fillRect(px,py,20,20);
+if(!on){x.strokeStyle="#222";x.strokeRect(px+.5,py+.5,19,19)}
 }}
 </script>
 </body>
